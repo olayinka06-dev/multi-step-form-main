@@ -1,8 +1,8 @@
-import Head from "next/head";
+// import Head from "next/head";
 import "./globals.css";
-// import { Ubuntu } from 'next/font/google'
+import { Ubuntu } from 'next/font/google'
 
-// const ubuntu = Ubuntu({ subsets: ['latin'] })
+const ubuntu = Ubuntu({ subsets: ['latin'] })
 
 export const metadata = {
   title: "Create Next App",
@@ -12,13 +12,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      {/* <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
           rel="stylesheet"
         />
-      </Head>
-      <body>{children}</body>
+      </Head> */}
+      <body className={ubuntu.className}>{children}</body>
     </html>
   );
 }
