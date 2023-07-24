@@ -3,50 +3,50 @@ import React, { useState } from "react";
 
 const StepOne = ({ activeStep, setActiveStep }) => {
 
-  // const [formData, setFormData] = useState({
-  //   text: "",
-  //   email: "",
-  //   number: "",
-  // });
+  const [formData, setFormData] = useState({
+    text: "",
+    email: "",
+    number: "",
+  });
 
-  // const [textError, setTextError] = useState("");
-  // const [emailError, setEmailError] = useState("");
-  // const [numberError, setNumberError] = useState("");
+  const [textError, setTextError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [numberError, setNumberError] = useState("");
 
-  // const handleInputChange = (e) => {
-  //   const { value, name } = e.target;
+  const handleInputChange = (e) => {
+    const { value, name } = e.target;
 
-  //   setFormData((prev) => ({ ...prev, [name]: value }));
-  //   setTextError(name === "text" && value.length < 3 ? "Username is too short" : "");
-  //   setEmailError(
-  //     name === "email" && value.length > 0 && !/\S+@\S+\.\S+/.test(value)
-  //       ? "Invalid Email Address"
-  //       : ""
-  //   );
-  //   setNumberError(
-  //     name === "number" &&
-  //       (value.length < 3 || value.length > 14)
-  //       ? "Phone number length must be between 3 and 14"
-  //       : ""
-  //   );
-  // };
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setTextError(name === "text" && value.length < 3 ? "Username is too short" : "");
+    setEmailError(
+      name === "email" && value.length > 0 && !/\S+@\S+\.\S+/.test(value)
+        ? "Invalid Email Address"
+        : ""
+    );
+    setNumberError(
+      name === "number" &&
+        (value.length < 3 || value.length > 14)
+        ? "Phone number length must be between 3 and 14"
+        : ""
+    );
+  };
 
-  // const handleSubmitForm = (e) => {
-  //   e.preventDefault();
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
 
-  //   if (!formData.text) {
-  //     setTextError("This Field is Required");
-  //   } else if (!formData.email) {
-  //     setEmailError("This Field is Required");
-  //   } else if (!formData.number) {
-  //     setNumberError("This Field is Required");
-  //   } else {
-  //     setTextError("");
-  //     setEmailError("");
-  //     setNumberError("");
-  //     setActiveStep(activeStep + 1);
-  //   }
-  // };
+    if (!formData.text) {
+      setTextError("This Field is Required");
+    } else if (!formData.email) {
+      setEmailError("This Field is Required");
+    } else if (!formData.number) {
+      setNumberError("This Field is Required");
+    } else {
+      setTextError("");
+      setEmailError("");
+      setNumberError("");
+      setActiveStep(activeStep + 1);
+    }
+  };
 
   return (
     <div className="flex flex-col gap-6 ">
