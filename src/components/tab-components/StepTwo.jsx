@@ -69,6 +69,7 @@ const StepTwo = ({ activeStep, setActiveStep, planSelected, handlePlanClick, sel
         /> */}
         <span className={`font-[600] ${!isToggled ? "text-[hsl(231,11%,63%)]" : "text-[hsl(213,96%,18%)]"}`}>Yearly</span>
       </div>
+      
       <div className="flex justify-between items-center mt-8">
         <button
           onClick={() => setActiveStep(activeStep - 1)}
