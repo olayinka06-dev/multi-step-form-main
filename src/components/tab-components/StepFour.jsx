@@ -1,13 +1,13 @@
 
-// import React from 'react';
+import React from 'react';
 
-// const StepFour = ({activePlan, overall}) => {
+const StepFour = ({activePlan, overall}) => {
 
-//   return (
-//     <div>
-//       <h3>{overall[activePlan].title}</h3>
-//     </div>
-//   )
-// }
+  return (
+    <div>
+      <h3>{overall[activePlan].title}</h3>
+    </div>
+  )
+}
 
-// export default StepFour;
+export default StepFour;
