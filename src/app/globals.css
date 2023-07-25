@@ -18,6 +18,7 @@
 body{
   font-family: 'Ubuntu', sans-serif;
 }
+
 .card{
   display: flex;
   animation: card_slider 1s ease-in-out;
