@@ -85,18 +85,17 @@ export default function Home() {
   };
 
   const handleReset = () => {
-    setTimeout(()=>{
-      setActiveStep(0)
+    setTimeout(() => {
+      setActiveStep(0);
     }, 1500);
 
-    setPlanSelected(0)
-    setShowPlanSelected(0)
-    setSelectedOptions([])
-    setClickedIndexes([])
-    setActiveStep(activeStep + 1)
-    setToggled(false)
-    
-  }
+    setPlanSelected(0);
+    setShowPlanSelected(0);
+    setSelectedOptions([]);
+    setClickedIndexes([]);
+    setActiveStep(activeStep + 1);
+    setToggled(false);
+  };
 
   const stepContent = [
     {
@@ -146,10 +145,8 @@ export default function Home() {
       ),
     },
     {
-      content:(
-        <ThanksGiving/>
-      )
-    }
+      content: <ThanksGiving />,
+    },
   ];
 
   const handleClickStep = (e) => {
@@ -165,6 +162,13 @@ export default function Home() {
             {stepContent[activeStep].content}
           </div>
         </div>
+      </div>
+      <div class="attribution">
+        Challenge by{" "}
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor
+        </a>
+        . Coded by <a href="#">Your Name Here</a>.
       </div>
     </div>
   );
