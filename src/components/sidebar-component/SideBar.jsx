@@ -30,7 +30,7 @@ const SideBar = ({handleClickMenu, activeStep}) => {
             {
               menuData.map((md, i)=>(
                 <li className='cursor-pointer flex items-center flex-row gap-4' key={i} onClick={()=> handleClickMenu(i)}>
-                    <span className={`h-4 ${activeStep === i ? "bg-[hsl(206,94%,87%)]" : "text-white"} w-4 hover:bg-[hsl(206,94%,87%)] rounded-full p-4 flex items-center justify-center border border-white border-solid`}>
+                    <span className={`h-4 ${activeStep === i ? "bg-[hsl(206,94%,87%)] border-[bg-[hsl(206,94%,87%)]]" : "text-white border-white"} w-4 hover:bg-[hsl(206,94%,87%)] rounded-full p-4 flex items-center justify-center border border-solid`}>
                         {md.number}
                     </span>
                     <div className="hidden md:flex flex-col gap-[2px]">

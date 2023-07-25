@@ -49,7 +49,7 @@ const StepOne = ({ activeStep, setActiveStep }) => {
   };
 
   return (
-    <div className="flex flex-col gap-6 ">
+    <div className="slider flex flex-col gap-6 ">
       <div className="flex flex-col gap-2">
         <h1 className="text-[hsl(213,96%,18%)] font-[700] text-[30px]">
           Personal info
@@ -135,12 +135,6 @@ const StepOne = ({ activeStep, setActiveStep }) => {
           </button>
         </div>
       </form>
-
-
-
-
-
-
     </div>
   );
 };

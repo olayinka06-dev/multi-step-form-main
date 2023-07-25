@@ -2,13 +2,9 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
-const StepTwo = ({ activeStep, setActiveStep, planSelected, handlePlanClick, selectPlanData}) => {
+const StepTwo = ({ activeStep, setActiveStep, planSelected, handlePlanClick,handleToggle, selectPlanData, isToggled}) => {
   
-  const [isToggled, setToggled] = useState(false);
 
-  const handleToggle = () => {
-    setToggled((prevState) => !prevState);
-  };
 
   return (
     <div className="flex flex-col gap-6 ">
@@ -73,7 +69,7 @@ const StepTwo = ({ activeStep, setActiveStep, planSelected, handlePlanClick, sel
       <div className="flex justify-between items-center mt-8">
         <button
           onClick={() => setActiveStep(activeStep - 1)}
-          className="inline-flex text-[hsl(213,96%,18%)] border-none py-2 px-5 text-lg"
+          className="inline-flex text-[hsl(213,96%,18%)] border-none py-2 px-5 text-[16px]"
         >
           Go Back
         </button>
