@@ -163,12 +163,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div class="attribution">
-        Challenge by{" "}
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-          Frontend Mentor
-        </a>
-        . Coded by <a href="#">Your Name Here</a>.
+      <div class="flex flex-col gap-3">
+        <span>Built with love by <span>Olayinka_Dev.</span> Follow and give it a star on github</span>
+        <a className="py-3 px-5 bg" href="">GitHub</a>
       </div>
     </div>
   );
