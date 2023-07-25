@@ -163,10 +163,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div class="flex flex-col gap-3">
-        <span>Built with love by <span>Olayinka_Dev.</span> Follow and give it a star on github</span>
-        <a className="py-3 px-5 bg" href="">GitHub</a>
-      </div>
     </div>
   );
 }

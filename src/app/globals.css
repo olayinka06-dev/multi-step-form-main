@@ -17,8 +17,11 @@
 }
 body{
   font-family: 'Ubuntu', sans-serif;
+  background-color: hsl(217,100%,97%);
 }
-
+.footer{
+  font-family: 'Ubuntu', sans-serif;
+}
 .card{
   display: flex;
   animation: card_slider 1s ease-in-out;
