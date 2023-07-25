@@ -1,13 +1,21 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 const StepTwo = ({ activeStep, setActiveStep, planSelected, handlePlanClick,handleToggle, selectPlanData, isToggled}) => {
   
-
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      delay: 50
+    })
+  }, []);
 
   return (
-    <div className="flex flex-col gap-6 ">
+    <div data-aos="fade-left" className="flex flex-col gap-6 ">
       <div className="flex flex-col gap-2">
         <h1 className="text-[hsl(213,96%,18%)] font-[700] text-[30px]">
           Select your plan
