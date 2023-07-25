@@ -1,7 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 const StepOne = ({ activeStep, setActiveStep }) => {
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      delay: 50
+    })
+  }, []);
 
   const [formData, setFormData] = useState({
     text: "",
@@ -49,7 +59,7 @@ const StepOne = ({ activeStep, setActiveStep }) => {
   };
 
   return (
-    <div className="slider flex flex-col gap-6 ">
+    <div data-aos="fade-left" className="slider flex flex-col gap-6 ">
       <div className="flex flex-col gap-2">
         <h1 className="text-[hsl(213,96%,18%)] font-[700] text-[30px]">
           Personal info
