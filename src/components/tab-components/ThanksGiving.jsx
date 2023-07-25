@@ -1,9 +1,21 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from 'react';
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 const ThanksGiving = () => {
+
+  useEffect(() => {
+    Aos.init({
+      duration: 300,
+      easing: "ease-in-out",
+      delay: 50
+    })
+  }, []);
+
   return (
-    <div className="flex h-full w-full py-32 flex-col gap-6 justify-center text-center items-center">
+    <div data-aos="fade-down" className="flex h-full w-full py-32 flex-col gap-6 justify-center text-center items-center">
       <div className="">
         <Image
           alt="thanks"
