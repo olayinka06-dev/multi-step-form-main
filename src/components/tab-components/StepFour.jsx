@@ -1,4 +1,8 @@
-import React from "react";
+"use client";
+import React, { useEffect } from 'react';
+
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 const StepFour = ({
   activePlan,
@@ -11,8 +15,17 @@ const StepFour = ({
   options,
   handleReset
 }) => {
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      delay: 50
+    })
+  }, []);
+  
   return (
-    <div className="flex flex-col gap-6 ">
+    <div data-aos="fade-left" className="flex flex-col gap-6 ">
       <div className="flex flex-col gap-2">
         <h1 className="text-[hsl(213,96%,18%)] font-[700] text-[30px]">
           Finishing up
