@@ -154,11 +154,11 @@ export default function Home() {
   };
 
   return (
-    <div className={`w-full sm:h-[100vh] ${activeStep === 1 ? "h-[155vh]": "h-[100vh]"} md:flex flex-col items-center justify-center bg-[hsl(217,100%,97%)]`}>
+    <div className={`w-full sm:h-[100vh] ${activeStep === 1 ? "h-[120vh]": "h-[105vh]"} md:flex flex-col items-center justify-center bg-[hsl(217,100%,97%)]`}>
       <div className="card md:w-2/3 relative md:bg-white flex md:flex-row flex-col gap-5 rounded-2xl shadow-md md:p-5 md:h-[85vh!important]">
         <SideBar handleClickMenu={handleClickStep} activeStep={activeStep} />
         <div className="w-full md:px-0 px-[25px] md:relative md:mx-0 mx-auto md:top-0 absolute top-[100px]">
-          <div className="bg-white md:py-5 md:px-10 p-3 rounded-2xl">
+          <div className="bg-white md:py-5 md:px-10 px-8 py-6 rounded-2xl">
             {stepContent[activeStep].content}
           </div>
         </div>

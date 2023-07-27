@@ -29,7 +29,7 @@ const StepTwo = ({ activeStep, setActiveStep, planSelected, handlePlanClick,hand
           <div
           key={i}
             onClick={()=> handlePlanClick(i)}
-            className={`w-full cursor-pointer flex ${planSelected === i ? "bg-[hsl(231,100%,99%)] border-[hsl(243,100%,62%)]" : ""} rounded-2xl p-4 hover:border-[hsl(243,100%,62%)] flex-col gap-7 border border-solid`}
+            className={`w-full cursor-pointer flex ${planSelected === i ? "bg-[hsl(231,100%,99%)] border-[hsl(243,100%,62%)]" : ""} rounded-2xl p-4 hover:border-[hsl(243,100%,62%)] flex-row md:flex-col gap-7 border border-solid`}
           >
             <div className="">
               <Image height={50} width={50} alt="image" src={spd.src} />
