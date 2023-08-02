@@ -50,6 +50,7 @@ export default function Home() {
 
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [clickedIndexes, setClickedIndexes] = useState([]);
+  const [showAmount, setshowAmount] = useState(false);
 
   const handleCheckboxChange = (index, isChecked) => {
     if (isChecked) {
@@ -67,7 +68,13 @@ export default function Home() {
         ? prevIndexes.filter((item) => item !== index)
         : [...prevIndexes, index]
     );
+    setshowAmount(true);
   };
+
+  const sumTotal = selectedOptions.reduce(
+    (total, index) => total + parseInt(options[index].amount.slice(2), 10),
+    0
+  );
 
   const [isToggled, setToggled] = useState(false);
 
@@ -141,6 +148,8 @@ export default function Home() {
           selectedOptions={selectedOptions}
           options={options}
           handleReset={handleReset}
+          sumTotal={sumTotal}
+          showAmount={showAmount}
         />
       ),
     },

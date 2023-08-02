@@ -113,6 +113,7 @@ export default StepThree;
 
 //   const [selectedOptions, setSelectedOptions] = useState([]);
 //   const [clickedIndexes, setClickedIndexes] = useState([]);
+//   const [showAmount, setshowAmount] = useState(false);
 
 //   const handleCheckboxChange = (index, isChecked) => {
 //     if (isChecked) {
@@ -130,6 +131,7 @@ export default StepThree;
 //         ? prevIndexes.filter((item) => item !== index)
 //         : [...prevIndexes, index]
 //     );
+//     setshowAmount(true);
 //   };
 
 //   // Calculate the sum total of all the amounts in the selected options array
@@ -191,7 +193,7 @@ export default StepThree;
 //           </ul>
 //           <div className="mt-4">
 //             <h2>Total Amount:</h2>
-//             <p>{`+$${sumTotal}/mo`}</p>
+//             {showAmount && <p>{`+$${sumTotal}/mo`}</p>}
 //           </div>
 //         </div>
 //       </div>
@@ -200,7 +202,6 @@ export default StepThree;
 // };
 
 // export default StepThree;
-
 
 // const StepThree = () => {
 //   const options = [
