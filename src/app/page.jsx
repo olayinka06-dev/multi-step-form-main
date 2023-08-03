@@ -16,17 +16,23 @@ export default function Home() {
     {
       src: "/assets/images/icon-arcade.svg",
       title: "Arcade",
-      month: "$9/mo",
+      month: 9,
+      year: 90,
+      free: "2 month free"
     },
     {
       src: "/assets/images/icon-advanced.svg",
       title: "Advanced",
-      month: "$12/mo",
+      month: 12,
+      year: 120,
+      free: "2 month free"
     },
     {
       src: "/assets/images/icon-pro.svg",
       title: "Pro",
-      month: "$15/mo",
+      month: 15,
+      year: 150,
+      free: "2 month free"
     },
   ];
 
@@ -35,16 +41,19 @@ export default function Home() {
       head: "Online service",
       text: "Access to multiplayer games",
       amount: "+$1/mo",
+      amount_year: "+$10/yr"
     },
     {
       head: "Larger storage",
       text: "Extra 1TB of cloud save",
       amount: "+$2/mo",
+      amount_year: "+$20/yr"
     },
     {
       head: "Customizable Profile",
       text: "Custom theme on your profile",
       amount: "+$2/mo",
+      amount_year: "+$20/yr"
     },
   ];
 
@@ -71,8 +80,13 @@ export default function Home() {
     setshowAmount(true);
   };
 
-  const sumTotal = selectedOptions.reduce(
+  
+  const sumTotalMonth = selectedOptions.reduce(
     (total, index) => total + parseInt(options[index].amount.slice(2), 10),
+    0
+  );
+  const sumTotalYear = selectedOptions.reduce(
+    (total, index) => total + parseInt(options[index].amount_year.slice(2), 10),
     0
   );
 
@@ -133,6 +147,7 @@ export default function Home() {
           selectedOptions={selectedOptions}
           clickedIndexes={clickedIndexes}
           options={options}
+          isToggled={isToggled}
         />
       ),
     },
@@ -148,8 +163,9 @@ export default function Home() {
           selectedOptions={selectedOptions}
           options={options}
           handleReset={handleReset}
-          sumTotal={sumTotal}
+          sumTotal={sumTotalMonth}
           showAmount={showAmount}
+          sumtotalYear={sumTotalYear}
         />
       ),
     },

@@ -10,7 +10,8 @@ const StepThree = ({
   clickedIndexes,
   handleCheckboxChange,
   handleContainerClick,
-  options
+  options,
+  isToggled
 }) => {
 
   useEffect(() => {
@@ -63,7 +64,9 @@ const StepThree = ({
                   </p>
                 </div>
                 <span className="text-[hsl(243,100%,62%)] font-[500]">
-                  {option.amount}
+                  {
+                    !isToggled ? (option.amount) : (option.amount_year)
+                  }
                 </span>
               </div>
             </div>

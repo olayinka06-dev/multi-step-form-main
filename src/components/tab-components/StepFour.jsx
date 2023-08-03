@@ -15,6 +15,7 @@ const StepFour = ({
   handleReset,
   showAmount,
   sumTotal,
+  sumtotalYear
 }) => {
   useEffect(() => {
     Aos.init({
@@ -45,12 +46,15 @@ const StepFour = ({
                 {!isPlan ? "(Monthly)" : "(Yearly)"}
               </span>
             </div>
-            <span className=" cursor-pointer" onClick={handleEditPlan}>
+            <span className="text-[hsl(231,11%,63%)] text-[16px] font-[500] underline cursor-pointer" onClick={handleEditPlan}>
               change
             </span>
           </div>
           <span className="text-[hsl(213,96%,18%)] font-[700] text-[15px] md:text-[18px]">
-            {overall[activePlan].month}
+            {
+              !isPlan ? ("$"+overall[activePlan].month+"/mo") : ("$"+overall[activePlan].year+"/yr")
+            }
+            
           </span>
         </div>
         <div className="mt-4  px-4 flex flex-col gap-2">
@@ -60,7 +64,9 @@ const StepFour = ({
                 {options[index].head}
               </h3>
               <h3 className="text-[hsl(213,96%,18%)]">
-                {options[index].amount}
+                {
+                  !isPlan ? (options[index].amount) : (options[index].amount_year)
+                }
               </h3>
             </div>
           ))}
@@ -71,7 +77,7 @@ const StepFour = ({
           Total {!isPlan ? "(per Month)" : "(per Year)"}
         </h3>
         {showAmount && (
-          <h1 className="text-[hsl(243,100%,62%)] font-[700] text-[18px] md:text-[25px]">{`+$${sumTotal}/mo`}</h1>
+          <h1 className="text-[hsl(243,100%,62%)] font-[700] text-[18px] md:text-[25px]">{`+$${isPlan ? (overall[activePlan].year + sumtotalYear+"/yr") : (overall[activePlan].month + sumTotal+"/mo")}`}</h1>
         )}
       </div>
       <div className="flex justify-between items-center mt-8">
