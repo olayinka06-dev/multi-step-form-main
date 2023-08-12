@@ -1,0 +1,33 @@
+"use client";
+import { StepContext } from '@/components/provider/StepContext'; 
+import React, {useContext} from 'react';
+
+const SideBar = () => {
+    const {menuData, activeStep, setActiveStep} = useContext(StepContext);
+
+    const handleClickMenu = (i) => {
+        setActiveStep(i)
+    }
+
+  return (
+    <aside className="h-[25vh] relative md:h-full md:bg-[url(/assets/images/bg-sidebar-desktop.svg)] bg-[url(/assets/images/bg-sidebar-mobile.svg)] bg-cover md:rounded-2xl py-8 px-5 bg-no-repeat bg-center w-full md:w-[370px]">
+        <ul className="flex md:flex-col flex-row md:items-start justify-center md:justify-start items-center gap-3">
+            {
+              menuData.map((md, i)=>(
+                <li className='cursor-pointer flex items-center flex-row gap-4' key={i} onClick={()=> handleClickMenu(i)}>
+                    <span className={`h-4 ${activeStep === i ? "bg-[hsl(206,94%,87%)] border-[bg-[hsl(206,94%,87%)]]" : "text-white border-white"} w-4 hover:bg-[hsl(206,94%,87%)] rounded-full p-4 flex items-center justify-center border border-solid`}>
+                        {md.number}
+                    </span>
+                    <div className="hidden md:flex flex-col gap-[2px]">
+                        <span className='text-[hsl(231,11%,63%)]'>{md.step}</span>
+                        <span className='text-white'>{md.title}</span>
+                    </div>
+                </li>
+              ))  
+            }
+        </ul>
+    </aside>
+  )
+}
+
+export default SideBar
